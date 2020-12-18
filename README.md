@@ -26,15 +26,15 @@ This Azure Function App will take a HTTP request and write it to Blob storage.  
 
    - Storage account connection: *AzureWebJobsStorage*
 
-     ![add-output](.media/add-output.png)
+     ![add-output](./media/add-output.png)
 
-     ![](.media/output-settings.png)
+     ![](./media/output-settings.png)
 
      
 
 5. Delete Output: Click on the default output **HTTP ($return)** and choose delete
 
-   ![delete-default-output](.media/delete-default-output.png)
+   ![delete-default-output](./media/delete-default-output.png)
 
 6. Edit Code: click on Code + Test
 
@@ -101,7 +101,7 @@ This Azure Function App will take a HTTP request and write it to Blob storage.  
 
 1. Create Data Factory Pipeline that has the login call, as well as a web activity that will return your desired data
 
-   ![data-factory-pipeline](.media/data-factory-pipeline.png)
+   ![data-factory-pipeline](./media/data-factory-pipeline.png)
 
 2. Link the web activity to an Azure Function activity
 
@@ -123,4 +123,4 @@ This Azure Function App will take a HTTP request and write it to Blob storage.  
 
    - Add Body - click on Dynamic Content and choose the previous activity and add *.response* to the end
 
-     ![azure-function-data-factory-settings](.media/azure-function-data-factory-settings.png)
+     ![azure-function-data-factory-settings](./media/azure-function-data-factory-settings.png)
