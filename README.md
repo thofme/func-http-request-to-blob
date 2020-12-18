@@ -12,7 +12,7 @@ This Azure Function App will take a HTTP request and write it to Blob storage.  
 
 2. Create new Azure Function
 
-   ![create-function](.\media\create-function.png)
+   ![create-function](./media/create-function.png)
 
 3. Edit Function, navigate to **Integration**
 
