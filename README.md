@@ -45,6 +45,7 @@ This Azure Function App will take a HTTP request and write it to Blob storage.  
 
 1. Edit Code: click on Code + Test
 
+   
    ```c#:HttpRequestToBlob/run.csx
    #r "Newtonsoft.Json"
    #r "Microsoft.Azure.WebJobs.Extensions.Storage"
