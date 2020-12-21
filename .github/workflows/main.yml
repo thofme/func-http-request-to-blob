@@ -30,15 +30,11 @@ jobs:
         with:
           # Target markdown file path.
           markdown: README.md
-
-      - name: Commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m "Embedding code into Markdown" -a
-      
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+                
+      - name: Git Commit/Push Changes
+        uses: actions-x/commit@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          email: "travis.hofmeister@gmail.com"
+          message: "Updating markdown embedded code"
           branch: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
