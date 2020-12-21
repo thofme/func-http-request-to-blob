@@ -36,5 +36,5 @@ jobs:
         with:
           email: $ {{ github.actor }}
           message: "Updating markdown embedded code"
-          branch: ${{ GITHUB_REF }}
+          branch: ${GITHUB_REF}
           token: ${{ secrets.GITHUB_TOKEN }}
