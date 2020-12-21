@@ -30,3 +30,11 @@ jobs:
         with:
           # Target markdown file path.
           markdown: README.md
+                
+      - name: Git Commit/Push Changes
+        uses: actions-x/commit@v2
+        with:
+          email: "travis.hofmeister@gmail.com"
+          message: "Updating markdown embedded code"
+          branch: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
