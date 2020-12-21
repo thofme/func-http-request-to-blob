@@ -139,4 +139,4 @@ This Azure Function App will take a HTTP request and write it to Blob storage.  
 
    - Add Body - click on Dynamic Content and choose the previous activity and add *.response* to the end
 
-     ![azure-function-data-factory-settings](./media/azure-function-data-factory-settings.pn)
+     ![azure-function-data-factory-settings](./media/azure-function-data-factory-settings.png)
