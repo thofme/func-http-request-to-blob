@@ -1,3 +1,5 @@
+![CI](https://github.com/travishofmeister/func-http-request-to-blob/workflows/CI/badge.svg?branch=main)
+
 # func-http-request-to-blob
 
 **Description**
