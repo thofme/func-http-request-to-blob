@@ -63,10 +63,14 @@ public static async Task<IActionResult> Run(
     }
     catch (Exception ex)
     {
+        //Log the exception
         log.LogInformation($"Caught exception: {ex.Message}");
 
+        //Create Bad results to send back to the requeser (Data Factory)
         string result = $"{{'result': 'bad', 'status': 400, 'Error': '{ex.Message.Replace("'", "\"")}'}}";
         dynamic data = JsonConvert.DeserializeObject(result);
+
+        //Send results back to the requester (Data Factory)
         return new BadRequestObjectResult(data);
     }
 }
