@@ -34,7 +34,7 @@ jobs:
       - name: Git Commit/Push Changes
         uses: actions-x/commit@v2
         with:
-          email: "travis.hofmeister@gmail.com"
+          email: $ {{ github.actor }}
           message: "Updating markdown embedded code"
-          branch: ${{ github.head_ref }}
+          branch: ${{ GITHUB_REF }}
           token: ${{ secrets.GITHUB_TOKEN }}
