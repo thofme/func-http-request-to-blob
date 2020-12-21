@@ -29,7 +29,7 @@ jobs:
     steps:
         
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      #- uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       
       #- name: Setup DotNet 2.2.402 Environment
       #  uses: actions/setup-dotnet@v1
