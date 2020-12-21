@@ -25,17 +25,20 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         
-      # Updates the Markdown file
-      - uses: tokusumi/markdown-embed-code@main
+      - name: Markdown Embed Code From File
+        uses: tokusumi/markdown-embed-code@v0.1.1
         with:
-          markdown: "README.md"
+          # Target markdown file path.
+          markdown: README.MD
+
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -m "Embedding code into Markdown" -a
+      
       - name: Push changes
-        uses: travishofmeister/func-http-request-to-blob@main
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.head_ref }}
