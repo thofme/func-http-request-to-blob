@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: './HttpRequestToBlob/' # set this to the path to your web app project, defaults to the repository root
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
   AZURE_FUNCTIONAPP_NAME: func-http-request-to-blob  # set this to your application's nameroot
   DOTNET_VERSION: '2.2.402'              # set this to the dotnet version to use
   
