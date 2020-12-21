@@ -37,6 +37,8 @@ This Azure Function App will take a HTTP request and write it to Blob storage.  
    ![delete-default-output](./media/delete-default-output.png)
 
 6. Edit Code: click on Code + Test
+   ```c#:HttpRequestToBlob/run.csx
+   ```
 
    ```c#
    #r "Newtonsoft.Json"
