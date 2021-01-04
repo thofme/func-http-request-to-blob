@@ -6,7 +6,7 @@
 **Description**
 
 
-This Azure Function App will take a HTTP request and write it to Blob storage.  This is useful in Data Factory when the API Service requires a session cookie for authentication.  Today, the cookie that is obtained in a login Web Activity cannot be added to the Copy Data activity.  Use this approach to write data from a web call to an Azure Blob.
+This Azure Function App will take a HTTP response and write it to Blob storage.  This is useful in Data Factory when the API Service requires a session cookie for authentication.  Today, the cookie that is obtained in a login Web Activity cannot be added to the request in a Copy Data activity.  Use this approach to write data from a web call to an Azure Blob.
 
 
 **Instructions**
