@@ -138,12 +138,12 @@ This Azure Function App will take a HTTP response and write it to Blob storage. 
 1. Link the web activity to an Azure Function activity
 
 1. Setup Linked Service for your Azure Function.  Take Key and URL from the Azure Function portal page
-   - URL: Navigate to the `Overview` of the function app.  The URL will appear in the top right of the primary plane.
-   ![get-azure-function-url](./media/azure-function-get-url.png)
-   - Keys: Navigate to the `App keys` of the funciton app.  Choose `+ New host key` and name it adf (for Azure Data Factory).  Choose `OK` and then save that key into your Key Vault or copy it for use in your linked service.
-   ![get-azure-function-url](./media/azure-function-create-key.png)
 
-2. Setup Activity
+   - URL: Navigate to the `Overview` of the function app.  The URL will appear in the top right of the primary plane.
+![get-azure-function-url](./media/azure-function-get-url.png)
+   - Keys: Navigate to the `App keys` of the funciton app.  Choose `+ New host key` and name it adf (for Azure Data Factory).  Choose `OK` and then save that key into your Key Vault or copy it for use in your linked service.
+![get-azure-function-url](./media/azure-function-create-key.png)
+1. Setup Activity
 
    
    - Method: *Post*
