@@ -73,24 +73,26 @@ This Azure Function App will take a HTTP response and write it to Blob storage. 
            string container = req.Query["container"];
            string directory = req.Query["directory"];
            string partition = req.Query["partition"];
+           string filename = req.Query["filename"];
    
            //Set container and directory from the Headers
            string containerHeader = req.Headers["container"];
            string directoryHeader = req.Headers["directory"];
            string partitionHeader = req.Headers["partition"];
+           string partitionFilename = req.Headers["filename"];
    
            //Read the request body - this should contain what we want to write to Blob
            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
            dynamic body = JsonConvert.DeserializeObject(requestBody);
-   
+           
            //If query parameter values don't exist, then see if they are in the body, then in the header, and finally default.
            container = container ?? body?.container ?? containerHeader ?? "raw";
            directory = directory ?? body?.directory ?? directoryHeader ?? "httpRequests";
            partition = partition ?? body?.partition ?? partitionHeader ?? "httpRequest";
-   
+           filename = filename ?? body?.filename ?? partitionFilename ?? Guid.NewGuid().ToString();
+           
            //Define the Blob location
-           var blobFileName = Guid.NewGuid();
-           var blobName = $"{container}/{directory}/{partition}/{blobFileName}.json";
+           var blobName = $"{container}/{directory}/{partition}/{filename}.json";
            var storageAttribute = "AzureWebJobsStorage"; //Be sure that the Function App has this defined.
    
            //Create the attributes of the Blob
@@ -115,17 +117,14 @@ This Azure Function App will take a HTTP response and write it to Blob storage. 
        }
        catch (Exception ex)
        {
-           //Log the exception
            log.LogInformation($"Caught exception: {ex.Message}");
    
-           //Create Bad results to send back to the requeser (Data Factory)
            string result = $"{{'result': 'bad', 'status': 400, 'Error': '{ex.Message.Replace("'", "\"")}'}}";
            dynamic data = JsonConvert.DeserializeObject(result);
-   
-           //Send results back to the requester (Data Factory)
            return new BadRequestObjectResult(data);
        }
    }
+   
    ```
 
 ***Data Factory***
