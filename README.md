@@ -155,9 +155,9 @@ This Azure Function App will take a HTTP response and write it to Blob storage. 
 
        
        `@concat('subjectArea/', formatDateTime(variables('ExtractDateTime'),'yyyy'), '/', formatDateTime(variables('ExtractDateTime'),'MM'), '/', formatDateTime(variables('ExtractDateTime'),'dd'), '/', formatDateTime(variables('ExtractDateTime'),'HH'))`
-       
+
      - filename - what you want the filename as.  I like to have a guid in the name, and you can append the subject area: @concat(guid(), '-subjectArea')
-     
+
    - Add Body - click on Dynamic Content and choose the previous activity and add *.response* to the end
 
      
