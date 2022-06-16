@@ -1,3 +1,4 @@
 theme: jekyll-theme-slate
 title: [Write Web Request to Blob]
 description: [This Azure Function App will take a HTTP response and write it to Blob storage.]
+show_downloads: [true]
